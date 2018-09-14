@@ -17,7 +17,8 @@ class CreateModelsTable extends Migration
         Schema::create('models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('model_name', 255);
-            $table->integer("brand_id")->unsigned();
+            $table->integer('brand_id')->unsigned();
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
         DB::table('models')->insert(array ('model_name' => '124 spider', 'brand_id' => 1));
         DB::table('models')->insert(array ('model_name' => '595', 'brand_id' => 1));

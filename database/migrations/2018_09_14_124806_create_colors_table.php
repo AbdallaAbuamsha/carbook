@@ -16,8 +16,8 @@ class CreateColorsTable extends Migration
     {
         Schema::create('colors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('color_name');
-            $table->string("hex");
+            $table->string('color_name', 255);
+            $table->string("hex", 10);
         });
         DB::table('colors')->insert(array ('color_name'=>'lightsalmon','hex'=>'#FFA07A'));
         DB::table('colors')->insert(array ('color_name'=>'salmon', 'hex'=>'#FA8072'));

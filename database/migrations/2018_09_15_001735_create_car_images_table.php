@@ -14,8 +14,9 @@ class CreateCarImagesTable extends Migration
     public function up()
     {
         Schema::create('car_images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('car_image_path');
+            $table->integer('car_id')->unsigned();
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
+            $table->string('car_images_path', 255);
             $table->timestamps();
         });
     }

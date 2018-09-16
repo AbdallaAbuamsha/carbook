@@ -14,15 +14,15 @@ class CreateStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create('car_statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->string("status_name", 255);
         });
-        DB::table('statuses')->insert(array ('status_name'=>'Excellent'));
-        DB::table('statuses')->insert(array ('status_name'=>'Very good'));
-        DB::table('statuses')->insert(array ('status_name'=>'good'));
-        DB::table('statuses')->insert(array ('status_name'=>'bad'));
-        DB::table('statuses')->insert(array ('status_name'=>'broken'));
+        DB::table('car_statuses')->insert(array ('status_name'=>'Excellent'));
+        DB::table('car_statuses')->insert(array ('status_name'=>'Very good'));
+        DB::table('car_statuses')->insert(array ('status_name'=>'good'));
+        DB::table('car_statuses')->insert(array ('status_name'=>'bad'));
+        DB::table('car_statuses')->insert(array ('status_name'=>'broken'));
     }
 
     /**

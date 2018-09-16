@@ -14,18 +14,18 @@ class CreateFuelTypesTablel extends Migration
      */
     public function up()
     {
-        Schema::create('fuel_types', function (Blueprint $table) {
+        Schema::create('car_fuel_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fuel_type_name', 255);
         });
 
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'Premium unleaded petrol'));
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'Super unleaded petrol'));
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'Diesel'));
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'LPG Auto-gas'));
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'Biofuels'));
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'Electric'));
-        DB::table('fuel_types')->insert(array ('fuel_type_name'=>'Hybrid'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'Premium unleaded petrol'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'Super unleaded petrol'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'Diesel'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'LPG Auto-gas'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'Biofuels'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'Electric'));
+        DB::table('car_fuel_types')->insert(array ('fuel_type_name'=>'Hybrid'));
     }
 
     /**

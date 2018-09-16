@@ -29,36 +29,36 @@ class CreateCarsTable extends Migration
             $table->integer('horse_power')                      ->nullable();               // without rbm
             $table->integer('torque')                           ->nullable();               // without rbm
             $table->integer("id_brand")         ->unsigned()    ->nullable();               // FK
-            $table->foreign("id_brand")->references('id')->on('brands')->onDelete('set null');
+            $table->foreign("id_brand")->references('id')->on('car_brands')->onDelete('set null');
             $table->integer("id_model")         ->unsigned()->nullable();                               // FK
-            $table->foreign("id_model")->references('id')->on('models')->onDelete('set null');
+            $table->foreign("id_model")->references('id')->on('car_models')->onDelete('set null');
             $table->integer("year");                                                        //
             $table->integer("fuel_type")             ->unsigned()    ->nullable();               // FK
-            $table->foreign("fuel_type")->references('id')->on('fuel_types')->onDelete('set null');
+            $table->foreign("fuel_type")->references('id')->on('car_fuel_types')->onDelete('set null');
             $table->text("un_repaired_problems")                ->nullable();               //
             $table->text("description")                         ->nullable();               //
             $table->text("more_details")                        ->nullable();               //
             $table->boolean('is_used');                                                     // true -> used | false -> new
             $table->integer("front_lights")     ->unsigned()->nullable();                   // FK
-            $table->foreign("front_lights")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("front_lights")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("front_bumpers")    ->unsigned()->nullable();                   // FK
-            $table->foreign("front_bumpers")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("front_bumpers")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("bonnet")           ->unsigned()->nullable();                   // FK
-            $table->foreign("bonnet")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("bonnet")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("wind_screen")      ->unsigned()->nullable();                   // FK
-            $table->foreign("wind_screen")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("wind_screen")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("rear_lights")      ->unsigned()->nullable();                   // FK
-            $table->foreign("rear_lights")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("rear_lights")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("rear_bumpers")     ->unsigned()->nullable();                   // FK
-            $table->foreign("rear_bumpers")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("rear_bumpers")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("tailgate")         ->unsigned()->nullable();                   // FK
-            $table->foreign("tailgate")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("tailgate")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("door_mirrors")     ->unsigned()->nullable();                   // FK
-            $table->foreign("door_mirrors")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("door_mirrors")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("carpets")          ->unsigned()->nullable();                   // FK
-            $table->foreign("carpets")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("carpets")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("stereo_navigate_etc")->unsigned()->nullable();                 // FK
-            $table->foreign("stereo_navigate_etc")->references('id')->on('statuses')->onDelete('set null');
+            $table->foreign("stereo_navigate_etc")->references('id')->on('car_statuses')->onDelete('set null');
             $table->integer("style")            ->unsigned()->nullable();                   // FK
             $table->foreign("style")->references('id')->on('car_styles')->onDelete('set null');
             $table->timestamps();

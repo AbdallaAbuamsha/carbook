@@ -18,3 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource("car", "CarController");
+
+Route::get("brands", "BrandController@index");
+Route::get("colors", "ColorsController@index");
+Route::get("models", "ModelController@index");
+Route::get("models/{id}", "ModelController@show");
+Route::get("features", "FeatureController@index");
+Route::get("fuel_types", "FuelTypeController@index");
+Route::get("styles", "StyleController@index");
+Route::get("statuses", "StatusController@index");
